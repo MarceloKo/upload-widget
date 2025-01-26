@@ -2,9 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "_version": "22.0.0",
   "compilerOptions": {
-    "lib": [
-      "es2023"
-    ],
+    "lib": ["es2023"],
     "module": "ESNext",
     "target": "ESNext",
     "strict": true,
@@ -12,9 +10,7 @@
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   }
 }

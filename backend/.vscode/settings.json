@@ -1,9 +1,10 @@
 {
-    "editor.formatOnSave": true,
-    "[typescript]": {
-        "editor.defaultFormatter": "biomejs.biome"
-    },
-    "editor.codeActionsOnSave": {
-        "source.organizeImports.biome": "explicit"
-    }
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    // TODO: Caso esteja com erro, adicione a extensão do biome no VSCode
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit"
+  }
 }
