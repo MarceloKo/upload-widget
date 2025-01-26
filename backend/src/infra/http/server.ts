@@ -44,7 +44,6 @@ server.register(fastifySwaggerUi, {
 })
 
 server.register(uploadImageRoute)
-console.log(env.DATABASE_URL)
 
 server.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
   console.log('HTTP Server running!')
