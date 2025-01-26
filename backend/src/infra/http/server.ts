@@ -1,17 +1,18 @@
 import { env } from '@/env'
 import { uploadImageRoute } from '@/infra/http/routes/upload-image'
+import { transformSwaggerSchema } from '@/infra/http/transform-swagger-schema'
 import { fastifyCors } from '@fastify/cors'
-import { fastify } from 'fastify'
 import { fastifyMultipart } from '@fastify/multipart'
 import { fastifySwagger } from '@fastify/swagger'
 import { fastifySwaggerUi } from '@fastify/swagger-ui'
-import { transformSwaggerSchema } from '@/infra/http/transform-swagger-schema'
+import { fastify } from 'fastify'
 import {
   hasZodFastifySchemaValidationErrors,
+  jsonSchemaTransform,
   serializerCompiler,
   validatorCompiler,
-  jsonSchemaTransform,
 } from 'fastify-type-provider-zod'
+import { getUploadsRoute } from './routes/get-upload'
 
 const server = fastify()
 
@@ -45,6 +46,7 @@ server.register(fastifySwaggerUi, {
 })
 
 server.register(uploadImageRoute)
+server.register(getUploadsRoute)
 
 server.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
   console.log('HTTP Server running!')
