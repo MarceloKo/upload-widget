@@ -10,10 +10,12 @@ export function transformSwaggerSchema(data: TransformSwaggerSchemaDAta) {
         properties: {},
       }
     }
+
     schema.body.properties.file = {
       type: 'string',
       format: 'binary',
     }
+
     schema.body.required.push('file')
   }
   return { schema, url }
